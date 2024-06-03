@@ -14,8 +14,8 @@ export const UserEvents = () => {
   async function FetchEvents() {
     try {
       const response = await databases.listDocuments(
-        import.meta.env.VITE_DATABASE_ID,
-        import.meta.env.VITE_COLLECTION2_ID,
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION2_ID,
         [Query.equal("userId", user.$id)]
       );
       const notes =
@@ -34,14 +34,14 @@ export const UserEvents = () => {
     }
     try {
       const response = await databases.listDocuments(
-        import.meta.env.VITE_DATABASE_ID,
-        import.meta.env.VITE_COLLECTION2_ID,
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION2_ID,
         [Query.equal("userId", user.$id)]
       );
       if (response.documents.length === 0) {
         await databases.createDocument(
-          import.meta.env.VITE_DATABASE_ID,
-          import.meta.env.VITE_COLLECTION2_ID,
+          import.meta.env.VITE_APPWRITE_DATABASE_ID,
+          import.meta.env.VITE_APPWRITE_COLLECTION2_ID,
           "unique()",
           {
             userId: user.$id,
@@ -51,8 +51,8 @@ export const UserEvents = () => {
       } else {
         const documentId = response.documents[0].$id;
         await databases.updateDocument(
-          import.meta.env.VITE_DATABASE_ID,
-          import.meta.env.VITE_COLLECTION2_ID,
+          import.meta.env.VITE_APPWRITE_DATABASE_ID,
+          import.meta.env.VITE_APPWRITE_COLLECTION2_ID,
           documentId,
           {
             Notes: updatedTask,
@@ -75,15 +75,15 @@ export const UserEvents = () => {
     const updatedTask = taskList.filter((_, id) => id != index);
     try {
       const response = await databases.listDocuments(
-        import.meta.env.VITE_DATABASE_ID,
-        import.meta.env.VITE_COLLECTION2_ID,
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION2_ID,
         [Query.equal("userId", user.$id)]
       );
       if (response.documents.length > 0) {
         const documentId = response.documents[0].$id;
         await databases.updateDocument(
-          import.meta.env.VITE_DATABASE_ID,
-          import.meta.env.VITE_COLLECTION2_ID,
+          import.meta.env.VITE_APPWRITE_DATABASE_ID,
+          import.meta.env.VITE_APPWRITE_COLLECTION2_ID,
           documentId,
           {
             Notes: updatedTask,

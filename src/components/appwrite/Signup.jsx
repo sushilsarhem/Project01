@@ -39,7 +39,7 @@ export const Signup = () => {
       let fileId = null;
       if (photo) {
         const uploadedFile = await storage.createFile(
-          import.meta.env.VITE_STORAGE_ID,
+          import.meta.env.VITE_APPWRITE_STORAGE_ID,
           "unique()",
           photo
         );
@@ -47,8 +47,8 @@ export const Signup = () => {
       }
 
       await databases.createDocument(
-        import.meta.env.VITE_DATABASE_ID,
-        import.meta.env.VITE_COLLECTION_ID,
+        import.meta.env.VITE_APPWRITE_DATABASE_ID,
+        import.meta.env.VITE_APPWRITE_COLLECTION_ID,
         "unique()",
         {
           userId: res.$id,

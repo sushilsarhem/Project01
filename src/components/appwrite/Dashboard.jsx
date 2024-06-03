@@ -21,8 +21,8 @@ export const Dashboard = () => {
 
         // console.log(userid);
         const response = await databases.listDocuments(
-          import.meta.env.VITE_DATABASE_ID,
-          import.meta.env.VITE_COLLECTION_ID,
+          import.meta.env.VITE_APPWRITE_DATABASE_ID,
+          import.meta.env.VITE_APPWRITE_COLLECTION_ID,
           [Query.equal("userId", newUser.$id)]
         );
         // console.log(response);
@@ -30,7 +30,7 @@ export const Dashboard = () => {
           SetUserDetails(response.documents[0]);
           if (response.documents[0].photo) {
             const file = await storage.getFileView(
-              import.meta.env.VITE_STORAGE_ID,
+              import.meta.env.VITE_APPWRITE_STORAGE_ID,
               response.documents[0].photo
             );
             SetFile(file.href);
