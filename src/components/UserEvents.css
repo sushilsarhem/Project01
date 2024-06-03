@@ -1,0 +1,40 @@
+.event-wrapper {
+  /* min-height: 90vh; */
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid rgb(214, 41, 136); */
+}
+.event-container input,
+button {
+  margin: 10px;
+  border-radius: 5px;
+}
+.todo-container {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  color: aliceblue;
+  /* border: 2px solid rgb(214, 41, 136); */
+
+  /* max-width: 300px; */
+}
+.user-list div {
+  list-style-type: decimal;
+  list-style-position: inside;
+  display: flex;
+  /* flex-direction: row; */
+}
+.user-list li,
+span {
+  margin-top: 10px;
+  margin-left: 10px;
+  color: aliceblue;
+  font-size: larger;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.user-list span {
+  color: red;
+  cursor: pointer;
+}

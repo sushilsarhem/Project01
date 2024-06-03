@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.footer p {
+  font-size: large;
+  font-weight: bold;
+  color: aliceblue;
+}
+.copyright {
+  padding: 0 4px;
+  color: aliceblue;
+}

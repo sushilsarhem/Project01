@@ -1,0 +1,24 @@
+.login-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+  color: aliceblue;
+  font-size: large;
+}
+.login-button {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  align-self: center;
+  background-color: rgb(12, 94, 66);
+}
+.login-button:active {
+  background-color: rgb(8, 68, 48);
+}

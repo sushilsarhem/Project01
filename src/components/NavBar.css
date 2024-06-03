@@ -1,0 +1,97 @@
+body {
+  /* background-color: rgba(159, 164, 163, 0.364); */
+  font-family: "Courier New", Courier, monospace;
+}
+
+nav {
+  background-color: rgb(5, 82, 82);
+  width: 100%;
+}
+
+.logo a {
+  color: aliceblue;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style-type: none;
+}
+
+.nav-list a {
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav-list a:hover {
+  color: aqua;
+}
+.menu-bar {
+  color: aliceblue;
+  font-size: 30px;
+  font-weight: bold;
+  display: none;
+  cursor: pointer;
+}
+.menu-bar:hover {
+  color: aqua;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  height: 70px;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list li {
+  padding: 0 20px;
+}
+.close {
+  color: aliceblue;
+  font-size: 30px;
+  font-weight: bold;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 860px) {
+  .menu-bar {
+    display: block;
+  }
+  .close {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    flex-direction: column;
+    background-color: rgb(165, 151, 41);
+    width: 100vw;
+    left: 0;
+    text-align: center;
+    top: 70px;
+    z-index: 1;
+  }
+  .nav-list li {
+    padding: 10px 0;
+  }
+  .nav-list a {
+    color: rgb(5, 82, 82);
+  }
+}
+
+.active {
+  display: flex;
+}
+.inactive {
+  display: none;
+}
