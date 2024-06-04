@@ -10,6 +10,7 @@ import { Dashboard } from "./components/appwrite/Dashboard";
 import { AlertBox } from "./components/appwrite/AlertBox";
 import { ErrorPage } from "./components/appwrite/ErrorPage";
 import { UserEvents } from "./components/UserEvents";
+import { VerifyUsers } from "./components/appwrite/VerifyUsers";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,6 +28,7 @@ function App() {
         { path: "userevents", element: <UserEvents /> },
 
         { path: "alertbox", element: <AlertBox /> },
+        { path: "verifyusers", element: <VerifyUsers /> },
       ],
       errorElement: <ErrorPage />,
     },

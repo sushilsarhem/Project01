@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { account, databases, storage } from "./appwrite";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AlertBox } from "./AlertBox";
 import "./Signup.css";
 
@@ -30,6 +30,10 @@ export const Signup = () => {
     try {
       const res = await account.create("unique()", email, password, name);
       // console.log("User creation response:", res);
+      await account.createVerification(
+        "https://sarangthem01.netlify.app/verifyusers"
+      );
+      alert("Verifiation email sent..");
 
       // Check if user ID is valid
       if (!res || !res.$id) {
