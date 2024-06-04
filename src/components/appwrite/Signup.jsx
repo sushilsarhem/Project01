@@ -34,7 +34,9 @@ export const Signup = () => {
       //make a sesion so that verification may work
       const sess = await account.createEmailPasswordSession(email, password);
       //send email verification
-      await account.createVerification("http://localhost:5173/verifyusers");
+      await account.createVerification(
+        "https://sarangthem01.netlify.app/verifyusers"
+      );
       console.log("verification email sent");
 
       // Check if user ID is valid
