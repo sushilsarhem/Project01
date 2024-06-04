@@ -11,6 +11,7 @@ import { AlertBox } from "./components/appwrite/AlertBox";
 import { ErrorPage } from "./components/appwrite/ErrorPage";
 import { UserEvents } from "./components/UserEvents";
 import { VerifyUsers } from "./components/appwrite/VerifyUsers";
+import { VerifyNote } from "./components/appwrite/VerifyNote";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +30,7 @@ function App() {
 
         { path: "alertbox", element: <AlertBox /> },
         { path: "verifyusers", element: <VerifyUsers /> },
+        { path: "verifynote", element: <VerifyNote /> },
       ],
       errorElement: <ErrorPage />,
     },

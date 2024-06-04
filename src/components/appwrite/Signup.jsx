@@ -30,10 +30,12 @@ export const Signup = () => {
     try {
       const res = await account.create("unique()", email, password, name);
       // console.log("User creation response:", res);
-      await account.createVerification(
-        "https://sarangthem01.netlify.app/verifyusers"
-      );
-      alert("Verifiation email sent..");
+
+      //make a sesion so that verification may work
+      const sess = await account.createEmailPasswordSession(email, password);
+      //send email verification
+      await account.createVerification("http://localhost:5173/verifyusers");
+      console.log("verification email sent");
 
       // Check if user ID is valid
       if (!res || !res.$id) {
@@ -69,7 +71,7 @@ export const Signup = () => {
         ////////////////////
         SetAlert(true);
         setTimeout(() => {
-          navigate("/login");
+          navigate("/verifynote");
           SetName("");
           SetEmail("");
           SetPassword("");
@@ -138,7 +140,7 @@ export const Signup = () => {
         <input
           type="text"
           name="company"
-          placeholder="enter Ccompany.."
+          placeholder="enter company.."
           value={company}
           onChange={(event) => SetCompany(event.target.value)}
         />

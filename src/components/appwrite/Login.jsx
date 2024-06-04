@@ -11,7 +11,7 @@ export const Login = () => {
   const [password, SetPassword] = useState("");
   const { user, SetUser } = useContext(UserContext);
 
-  const [alert, SetAlert] = useState(false);
+  const [showAlert, SetAlert] = useState(false);
 
   const navigate = useNavigate();
 
@@ -68,7 +68,7 @@ export const Login = () => {
       <button className="login-button" onClick={handleSubmit}>
         Login
       </button>
-      {alert && (
+      {showAlert && (
         <AlertBox
           status={"Login Successful"}
           redirect={"Redirecting To Dashboard.."}

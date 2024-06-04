@@ -10,7 +10,7 @@
 .nav-arrows {
   position: absolute;
   width: 100%;
-  top: 37%;
+  top: 38%;
   color: aliceblue;
   font-size: xx-large;
   cursor: pointer;
@@ -54,7 +54,7 @@
     height: 250px;
   }
   .nav-arrows {
-    top: 33%;
+    top: 27%;
   }
   .left-arrow {
     position: absolute;
@@ -63,5 +63,11 @@
   .right-arrow {
     position: absolute;
     right: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav-arrows {
+    display: none;
   }
 }

@@ -18,8 +18,8 @@ export const VerifyUsers = () => {
     try {
       const res = await account.updateVerification(userId, secret);
       if (res) {
-        alert("Verified! please Login");
-        navigate("/login");
+        // alert("Account verified! Redirecting....");
+        navigate("/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -28,7 +28,15 @@ export const VerifyUsers = () => {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        minHeight: "100vh",
+        alignItems: "center",
+        color: "white",
+      }}
+    >
       <h1>Please wait while we verify your account..</h1>
     </div>
   );

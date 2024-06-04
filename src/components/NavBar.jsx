@@ -47,7 +47,7 @@ export const NavBar = () => {
       <nav>
         <div className="container">
           <div className="logo">
-            <Link to="/">Event Master</Link>
+            <Link to="/">Sarangthem</Link>
           </div>
           <ul
             className={`nav-list ${
