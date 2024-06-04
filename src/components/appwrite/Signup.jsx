@@ -16,7 +16,7 @@ export const Signup = () => {
   const [email, SetEmail] = useState("");
   const [password, SetPassword] = useState("");
 
-  const [alert, SetAlert] = useState(false);
+  const [showAlert, SetAlert] = useState(false);
 
   const navigate = useNavigate();
 
@@ -29,7 +29,7 @@ export const Signup = () => {
     event.preventDefault();
     try {
       const res = await account.create("unique()", email, password, name);
-      console.log("User creation response:", res);
+      // console.log("User creation response:", res);
 
       // Check if user ID is valid
       if (!res || !res.$id) {
@@ -74,7 +74,7 @@ export const Signup = () => {
       }
       // console.log(name, email, password);
     } catch (error) {
-      console.error("Signup error:", error);
+      // console.error("Signup error:", error);
       alert("Signup failed!");
     }
   }
@@ -162,7 +162,7 @@ export const Signup = () => {
         {/* <br /> */}
         <button>SIGN UP</button>
       </form>
-      {alert && (
+      {showAlert && (
         <AlertBox
           status={"Account Creation successful"}
           redirect={"Redirecting For Login.."}

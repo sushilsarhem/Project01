@@ -33,7 +33,7 @@ export const Login = () => {
       }
     } catch (error) {
       alert("Unable to login!");
-      console.error("Loginup error:", error);
+      // console.error("Loginup error:", error);
       // console.log(error);
     }
   }
