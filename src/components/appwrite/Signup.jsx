@@ -35,7 +35,7 @@ export const Signup = () => {
       const sess = await account.createEmailPasswordSession(email, password);
       //send email verification
       await account.createVerification(
-        "https://sarangthem01.netlify.app/verifyusers"
+        import.meta.env.VITE_APPWRITE_VERIFICATION_URL
       );
       console.log("verification email sent");
 
