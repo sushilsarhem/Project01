@@ -27,7 +27,7 @@ export const UserEvents = () => {
   }
 
   async function AddTask() {
-    const updatedTask = [...taskList, newTask];
+    const updatedTask = [...taskList, [newTask]];
     if (newTask.trim() === "") {
       console.log("input field cannot be empty");
       return;
