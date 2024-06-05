@@ -29,7 +29,7 @@ function App() {
         { path: "userevents", element: <UserEvents /> },
 
         { path: "alertbox", element: <AlertBox /> },
-        { path: "verifyusers", element: <VerifyUsers /> },
+        { path: "/verifyusers", element: <VerifyUsers /> },
         { path: "verifynote", element: <VerifyNote /> },
       ],
       errorElement: <ErrorPage />,
