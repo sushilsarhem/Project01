@@ -19,19 +19,20 @@ export const UserEvents = () => {
         [Query.equal("userId", user.$id)]
       );
       const notes =
-        response.documents.length > 0 ? response.documents[0].Notes : [];
-      SetTaskList(notes || []);
+        response.documents.length > 0 ? response.documents[0].Notes || [] : [];
+      SetTaskList(notes);
     } catch (error) {
       console.log("Unable to fetch tasks", error);
     }
   }
 
   async function AddTask() {
-    const updatedTask = [...taskList, [newTask]];
     if (newTask.trim() === "") {
       console.log("input field cannot be empty");
       return;
     }
+    const updatedTask = [...taskList, newTask];
+
     try {
       const response = await databases.listDocuments(
         import.meta.env.VITE_APPWRITE_DATABASE_ID,
@@ -45,7 +46,7 @@ export const UserEvents = () => {
           "unique()",
           {
             userId: user.$id,
-            Notes: newTask,
+            Notes: updatedTask,
           }
         );
       } else {
@@ -72,7 +73,7 @@ export const UserEvents = () => {
   }, [user]);
 
   async function DeleteTask(index) {
-    const updatedTask = taskList.filter((_, id) => id != index);
+    const updatedTask = taskList.filter((_, id) => id !== index);
     try {
       const response = await databases.listDocuments(
         import.meta.env.VITE_APPWRITE_DATABASE_ID,
